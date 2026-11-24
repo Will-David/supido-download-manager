@@ -4,14 +4,14 @@ SUPIDO est un gestionnaire de téléchargements vidéo original, écrit en Node.
 
 Le nom vient de « speed » prononcé à la japonaise. La signature éclair reprend cette idée.
 
-Ce projet est une implémentation indépendante. Il n'utilise ni le code, ni les ressources, ni la licence d'Internet Download Manager. Le fichier `idman643build18.exe` présent à la racine sert uniquement de référence d'analyse REA.
+SUPIDO est développé de façon indépendante. Le moteur repose sur yt-dlp et ffmpeg, sans code ni ressource propriétaire incluse.
 
 ## Prérequis
 
-- Node.js 20 ou supérieur. La machine utilise actuellement Node.js v22.22.1.
-- `yt-dlp` pour les sites vidéo et les flux HLS.
-- `ffmpeg` pour fusionner les pistes vidéo et audio.
-- Un accès local au port `8787`.
+- Node.js 20 ou supérieur
+- yt-dlp pour les sites vidéo et les flux HLS
+- ffmpeg pour fusionner les pistes vidéo et audio
+- un accès local au port `8787`
 
 Aucune dépendance npm n'est à installer. Le projet n'utilise que les modules intégrés à Node.js.
 
@@ -22,30 +22,30 @@ node -v
 supido doctor
 ```
 
-La commande `supido doctor` doit afficher le chemin de `yt-dlp`, la version installée et le dossier de téléchargement accessible.
+La commande `supido doctor` doit afficher le chemin de yt-dlp, sa version et le dossier de téléchargement accessible.
 
 ## Installation
 
-### 1. Emplacement du projet
+### 1. Dossier du projet
 
-Le projet est installé dans :
+Placer le projet dans le dossier de votre choix, par exemple `~/supido`. Toutes les commandes suivantes partent de ce dossier :
 
 ```bash
-/mnt/c/Users/Will-David/Desktop/rea-idm
+cd ~/supido
 ```
 
-Pour l'installer sur une autre machine, copier ce dossier puis adapter le chemin dans le wrapper de la commande `supido`.
+Adapter ce chemin selon votre installation.
 
 ### 2. Commande globale `supido`
 
-Le wrapper se trouve dans `~/.local/bin/supido` et contient :
+Créer le wrapper `~/.local/bin/supido` avec ce contenu :
 
 ```bash
 #!/bin/sh
-exec node /mnt/c/Users/Will-David/Desktop/rea-idm/bin/supido.js "$@"
+exec node "$HOME/supido/bin/supido.js" "$@"
 ```
 
-Le rendre exécutable :
+Remplacer `$HOME/supido` par le chemin réel du projet si nécessaire. Puis rendre le wrapper exécutable :
 
 ```bash
 chmod +x ~/.local/bin/supido
@@ -67,16 +67,14 @@ Sans wrapper, toutes les commandes fonctionnent aussi avec `node bin/supido.js`.
 
 ### 3. Binaires de téléchargement
 
-Sur cette machine, `yt-dlp` et `ffmpeg` sont déjà installés dans :
+Placer yt-dlp et ffmpeg dans `~/.local/bin` :
 
 ```bash
 ~/.local/bin/yt-dlp
 ~/.local/bin/ffmpeg
 ```
 
-Les versions en place sont `yt-dlp 2026.10.26` et `ffmpeg N-129267-g9ec5cf1aac-20261124`.
-
-Pour une installation neuve, placer les deux binaires dans `~/.local/bin`, puis :
+Puis les rendre exécutables :
 
 ```bash
 chmod +x ~/.local/bin/yt-dlp ~/.local/bin/ffmpeg
@@ -89,7 +87,7 @@ yt-dlp --version
 ffmpeg -version | head -1
 ```
 
-SUPIDO détecte automatiquement `~/.local/bin/yt-dlp`. Il est possible de forcer un autre chemin avec la clé `ytDlpPath` de la configuration.
+SUPIDO détecte automatiquement `~/.local/bin/yt-dlp`. Il est possible de forcer un autre binaire avec la clé `ytDlpPath` de la configuration.
 
 ## Démarrage et arrêt
 
@@ -158,9 +156,9 @@ Le format par défaut est `bv*+ba/b`. Il télécharge la meilleure vidéo et le 
 
 Les réglages sont dans `data/config.json` et modifiables depuis l'interface web.
 
-| Clé | Valeur actuelle | Rôle |
+| Clé | Valeur par défaut | Rôle |
 |---|---|---|
-| `downloadDir` | `/mnt/c/Users/Will-David/Desktop/rea-idm/data/downloads` | dossier de sortie |
+| `downloadDir` | `data/downloads` | dossier de sortie, relatif au projet |
 | `ytDlpPath` | `yt-dlp` | binaire yt-dlp, résolu automatiquement dans `~/.local/bin` |
 | `format` | `bv*+ba/b` | sélection des formats |
 | `concurrency` | `2` | nombre de téléchargements simultanés |
@@ -266,6 +264,6 @@ Vérifier la version de yt-dlp et le format configuré. Le format `bv*+ba/b` est
 - L'extension ne démarre pas le serveur, qui doit déjà être lancé.
 - Aucune planification horaire pour l'instant.
 
-## Origine du projet
+## À propos
 
-Une analyse REA de `idman643build18.exe` a montré un exécutable PE32 x86 de 12 164 608 octets, signé `Tonec Inc.`, avec une couche d'amorçage et d'interface. Aucun élément de ce binaire n'a été copié dans SUPIDO. Le moteur de téléchargement est entièrement original et repose sur yt-dlp et ffmpeg.
+SUPIDO est une création indépendante. Aucun binaire tiers n'est fourni avec le projet. Les téléchargements sont effectués par les outils installés sur votre machine.
