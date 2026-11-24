@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SUPIDO : gérez vos téléchargements vidéo en ligne, file d'attente, reprise et progression." />
+  <title>SUPIDO : Votre vidéo, en toute simplicité</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="brand" aria-label="SUPIDO, accueil">
+        <span class="icon brand-icon" data-icon="ph:lightning-duotone" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">SUPIDO</span>
+          <span class="brand-tag">TÉLÉCHARGEMENT VIDÉO</span>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#telecharger" class="nav-link">Télécharger</a>
+        <a href="#file" class="nav-link">Ma file</a>
+        <a href="#historique" class="nav-link">Historique</a>
+        <a href="#configuration" class="nav-cta">Configuration</a>
+      </nav>
+
+      <div class="mobile-nav">
+        <button id="menu-btn" class="icon-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span class="icon" data-icon="ph:list-duotone" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="#telecharger" class="nav-link">Télécharger</a>
+      <a href="#file" class="nav-link">Ma file</a>
+      <a href="#historique" class="nav-link">Historique</a>
+      <a href="#configuration" class="nav-link">Configuration</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Accroche + ajout d'une URL -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Votre vidéo est-elle <span>prête à regarder&nbsp;?</span></h1>
+      <p class="hero-sub">Téléchargez une vidéo depuis n'importe quel site ou un fichier direct. Collez le lien, SUPIDO s'occupe du reste, même si vous devez reprendre plus tard.</p>
+
+      <form id="add-form" class="search-card" autocomplete="off">
+        <span class="icon search-icon" data-icon="ph:magnifying-glass-duotone" aria-hidden="true"></span>
+        <input id="url" type="text" placeholder="Lien d'une vidéo, d'un site, ou URL d'un fichier…" required />
+        <select id="type" title="Moteur de téléchargement" aria-label="Moteur de téléchargement">
+          <option value="auto">Auto</option>
+          <option value="video">Site vidéo</option>
+          <option value="direct">Fichier direct</option>
+        </select>
+        <button type="submit">Ajouter</button>
+      </form>
+      <p class="search-hint">
+        <span class="icon hint-icon" data-icon="ph:info-duotone" aria-hidden="true"></span>
+        « Auto » choisit tout seul entre moteur vidéo et fichier direct. La reprise est automatique.
+      </p>
+
+      <div class="quick">
+        <span>Ou essayez&nbsp;:</span>
+        <button type="button" class="pill" data-demo="https://www.youtube.com/watch?v=jNQXAC9IVRw" data-kind="video">YouTube</button>
+        <button type="button" class="pill" data-demo="https://vimeo.com/76979871" data-kind="video">Vimeo</button>
+        <button type="button" class="pill" data-demo="https://example.com/film.mp4" data-kind="direct">Fichier MP4</button>
+      </div>
+    </section>
+
+    <!-- Que voulez-vous faire ? -->
+    <section class="band" id="telecharger" aria-labelledby="actions-title">
+      <div class="band-inner">
+        <h2 id="actions-title" class="center-title">Que voulez-vous faire&nbsp;?</h2>
+        <div class="cards-3">
+          <button type="button" class="action-card primary" data-preset="video">
+            <span class="icon-box solid">
+              <span class="icon" data-icon="ph:film-slate-duotone" aria-hidden="true"></span>
+            </span>
+            <span class="card-title">Télécharger une vidéo</span>
+            <span class="card-text">Un site vidéo, une plateforme, une page en ligne : collez l'URL et laissez le moteur faire.</span>
+            <span class="card-link">Commencer</span>
+          </button>
+          <button type="button" class="action-card" data-preset="direct">
+            <span class="icon-box soft">
+              <span class="icon" data-icon="ph:download-simple-duotone" aria-hidden="true"></span>
+            </span>
+            <span class="card-title">Récupérer un fichier</span>
+            <span class="card-text">Un lien direct vers un MP4, WebM, MP3 ou autre fichier : reprise incluse si le transfert coupe.</span>
+            <span class="card-link">Commencer</span>
+          </button>
+          <a class="action-card" href="#file">
+            <span class="icon-box soft">
+              <span class="icon" data-icon="ph:list-checks-duotone" aria-hidden="true"></span>
+            </span>
+            <span class="card-title">Suivre ma file</span>
+            <span class="card-text">Progression en direct, pause, reprise, annulation : gardez un œil sur tous vos transferts.</span>
+            <span class="card-link">Voir la file</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comment ça marche -->
+    <section class="steps" aria-labelledby="steps-title">
+      <h2 id="steps-title" class="center-title">Comment ça marche&nbsp;?</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <span class="step-n">1</span>
+          <h3>Collez votre lien</h3>
+          <p>Une URL de site vidéo ou un fichier direct. Le mode « Auto » reconnaît le bon moteur.</p>
+        </div>
+        <div class="step">
+          <span class="step-n">2</span>
+          <h3>Suivez la progression</h3>
+          <p>La file affiche l'avancement, la vitesse et le temps restant, mis à jour en direct.</p>
+        </div>
+        <div class="step">
+          <span class="step-n">3</span>
+          <h3>Récupérez le fichier</h3>
+          <p>Le fichier arrive dans votre dossier de sortie et l'historique garde la trace de tout.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- File d'attente -->
+    <section class="wrap" id="file" aria-labelledby="queue-title">
+      <div class="section-head">
+        <h2 id="queue-title">Ma file d'attente</h2>
+        <span class="status-pill" id="status-pill"><span id="status-icon" class="icon status-icon" data-icon="ph:warning-circle-duotone" aria-hidden="true"></span><span id="status-text">connexion…</span></span>
+      </div>
+      <div class="stats">
+        <div class="stat"><span id="stat-queue">0</span><small>en file</small></div>
+        <div class="stat"><span id="stat-active">0</span><small>actifs</small></div>
+        <div class="stat"><span id="stat-done">0</span><small>terminés</small></div>
+        <div class="stat"><span id="stat-error">0</span><small>en erreur</small></div>
+      </div>
+      <div id="queue" class="list"><p class="empty">Aucune tâche pour le moment.</p></div>
+    </section>
+
+    <!-- Configuration -->
+    <section class="wrap" id="configuration" aria-labelledby="config-title">
+      <div class="panel">
+        <details id="config-panel">
+          <summary>
+            <h2 id="config-title" class="inline-title">Configuration</h2>
+            <span id="config-icon" class="icon summary-icon" data-icon="ph:plus-duotone" aria-hidden="true"></span>
+          </summary>
+          <div class="config-grid">
+            <label>Dossier de sortie<input id="cfg-downloadDir" type="text" /></label>
+            <label>Format vidéo<input id="cfg-format" type="text" /></label>
+            <label>Concurrence<input id="cfg-concurrency" type="number" min="1" max="8" /></label>
+            <label>Port de l'interface<input id="cfg-port" type="number" min="1024" max="65535" /></label>
+            <label>Limite de vitesse (KiB/s, 0 = illimité)<input id="cfg-speedLimitKiB" type="number" min="0" /></label>
+            <label class="check"><input id="cfg-notifications" type="checkbox" /> Notifications de fin</label>
+          </div>
+          <button id="save-config" type="button" class="btn">Enregistrer</button>
+        </details>
+      </div>
+    </section>
+
+    <!-- Historique -->
+    <section class="wrap" id="historique" aria-labelledby="history-title">
+      <div class="section-head">
+        <h2 id="history-title">Historique</h2>
+        <button id="clear-history" type="button" class="ghost">
+          <span class="icon" data-icon="ph:trash-duotone" aria-hidden="true"></span>
+          <span>Effacer</span>
+        </button>
+      </div>
+      <div id="history" class="list"><p class="empty">Historique vide.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>SUPIDO : vos téléchargements vidéo, simplement. <a href="#top">Retour en haut</a></p>
+      <p class="footer-note">Interface locale · les fichiers restent sur votre machine.</p>
+    </div>
+  </footer>
+
+  <!-- Guide flottant -->
+  <div class="guide-wrap">
+    <div id="guide-bubble" class="guide-bubble" hidden>
+      <div class="guide-head">
+        <span class="icon help-badge" data-icon="ph:question-duotone" aria-hidden="true"></span>
+        <div class="guide-copy">
+          <div class="guide-top">
+            <strong id="guide-title">Bienvenue&nbsp;!</strong>
+            <button id="guide-close" type="button" class="icon-btn small" aria-label="Fermer l'aide">
+              <span class="icon" data-icon="ph:x-duotone" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p id="guide-tip">Collez un lien vidéo dans la barre pour commencer.</p>
+        </div>
+      </div>
+      <div class="guide-bottom">
+        <div id="guide-dots" class="dots"></div>
+        <button id="guide-next" type="button" class="btn small">Suivant</button>
+      </div>
+    </div>
+    <button id="guide-toggle" type="button" class="guide-toggle" aria-label="Ouvrir l'aide" title="Besoin d'aide ?">
+      <span class="icon" data-icon="ph:question-duotone" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <script src="/icons.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SUPIDO : détecteur vidéo</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <span class="mark icon" data-icon="ph:lightning-duotone" aria-hidden="true"></span>
+    <span class="brand">
+      <strong>SUPIDO</strong>
+      <small>Détection de vidéos</small>
+    </span>
+    <span id="status" class="status warn">
+      <span id="status-icon" class="icon" data-icon="ph:warning-circle-duotone" aria-hidden="true"></span>
+      <span id="status-text">connexion…</span>
+    </span>
+  </header>
+
+  <main>
+    <div class="row">
+      <button id="scan" type="button" class="btn">
+        <span class="icon" data-icon="ph:magnifying-glass-duotone" aria-hidden="true"></span>
+        <span>Analyser cette page</span>
+      </button>
+      <button id="open" type="button" class="ghost">
+        <span class="icon" data-icon="ph:folder-open-duotone" aria-hidden="true"></span>
+        <span>Ouvrir SUPIDO</span>
+      </button>
+    </div>
+    <p id="message" class="message">Analyse de la page en cours…</p>
+    <div id="list" class="list"></div>
+
+    <details class="settings">
+      <summary>
+        <span>Réglages</span>
+        <span id="settings-icon" class="icon" data-icon="ph:plus-duotone" aria-hidden="true"></span>
+      </summary>
+      <label>Adresse du serveur local
+        <input id="base" type="text" value="http://localhost:8787" spellcheck="false" />
+      </label>
+      <button id="save" type="button" class="ghost small">
+        <span class="icon" data-icon="ph:check-duotone" aria-hidden="true"></span>
+        <span>Enregistrer</span>
+      </button>
+    </details>
+  </main>
+
+  <script src="icons.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

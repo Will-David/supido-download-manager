@@ -1,0 +1,10 @@
+{
+  "downloadDir": "/mnt/c/Users/Will-David/Desktop/rea-idm/data/downloads",
+  "ytDlpPath": "yt-dlp",
+  "format": "bv*+ba/b",
+  "concurrency": 2,
+  "port": 8787,
+  "speedLimitKiB": 0,
+  "notifications": true,
+  "historyLimit": 200
+}

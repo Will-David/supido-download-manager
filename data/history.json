@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "a95db0916160",
+      "url": "https://voiranime.rip/replica-datte-koi-wo-suru/saison-1/episode-1/vostfr/",
+      "type": "video",
+      "status": "done",
+      "progress": 100,
+      "downloaded": 1201230136,
+      "total": 1201230136,
+      "title": "Replica Datte Koi wo Suru Saison 1 - Episode 1 en streaming VOSTFR | Voiranime",
+      "filename": "a95db0916160.Replica Datte Koi wo Suru Saison 1 - Episode 1 en streaming VOSTFR _ Voiranime.mp4",
+      "error": null,
+      "addedAt": "2026-11-24T14:28:18.061Z",
+      "startedAt": "2026-11-24T14:28:18.378Z",
+      "finishedAt": "2026-11-24T14:36:05.567Z",
+      "engine": "video",
+      "speed": null,
+      "eta": null,
+      "path": "/mnt/c/Users/Will-David/Desktop/rea-idm/data/downloads/a95db0916160.Replica Datte Koi wo Suru Saison 1 - Episode 1 en streaming VOSTFR _ Voiranime.mp4",
+      "bytes": 1175084905,
+      "archivedAt": "2026-11-24T14:36:05.827Z"
+    },
+    {
+      "id": "e406be76292e",
+      "url": "https://voiranime.rip/kaiju-no-8-5/oav/episode-2/vostfr/",
+      "type": "video",
+      "status": "done",
+      "progress": 100,
+      "downloaded": 176354528,
+      "total": 176354528,
+      "title": "Kaiju No. 8 OAV - Episode 2 VOSTFR",
+      "filename": "e406be76292e.Kaiju No. 8 OAV - Narumi's Week at Work - partie 1 en streaming VOSTFR _ Voiranime.mp4",
+      "error": null,
+      "addedAt": "2026-11-24T00:34:08.200Z",
+      "startedAt": "2026-11-24T00:34:08.559Z",
+      "finishedAt": "2026-11-24T00:39:49.134Z",
+      "engine": "video",
+      "speed": null,
+      "eta": null,
+      "path": "/mnt/c/Users/Will-David/Desktop/rea-idm/data/downloads/e406be76292e.Kaiju No. 8 OAV - Narumi's Week at Work - partie 1 en streaming VOSTFR _ Voiranime.mp4",
+      "bytes": 176354528,
+      "archivedAt": "2026-11-24T00:39:49.341Z"
+    }
+  ]
+}

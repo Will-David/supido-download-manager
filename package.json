@@ -1,0 +1,17 @@
+{
+  "name": "supido",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SUPIDO - gestionnaire de téléchargements vidéo original (file d'attente, reprise, progression, UI locale)",
+  "bin": {
+    "supido": "./bin/supido.js"
+  },
+  "scripts": {
+    "start": "node bin/supido.js serve",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

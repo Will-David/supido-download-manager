@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "SUPIDO - Détecteur vidéo",
+  "version": "0.1.0",
+  "description": "Détecte les vidéos d'une page (YouTube, sites vidéo, fichiers et flux HTTPS) et les ajoute à la file SUPIDO.",
+  "permissions": ["activeTab", "scripting", "storage", "webNavigation"],
+  "host_permissions": [
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SUPIDO : détecter les vidéos de cette page"
+  }
+}

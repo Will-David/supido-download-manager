@@ -1,0 +1,77 @@
+:root {
+  --green-50:#f0faf4; --green-700:#166039; --green-800:#134d30;
+  --ink:#111827; --gray-700:#374151; --gray-600:#4b5563; --gray-500:#6b7280;
+  --line:#e5e7eb; --line-soft:#f3f4f6; --deep:#17564c;
+  --gold:#dfa63f;
+}
+* { box-sizing:border-box; }
+body {
+  width:360px; margin:0; color:var(--ink); background:#fff;
+  font:13px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+/* Meme jeu d'icones que l'interface web : Phosphor Duotone via Iconify. */
+.icon { display:inline-flex; align-items:center; justify-content:center; flex:none; line-height:0; }
+.icon svg { display:block; width:1em; height:1em; }
+header {
+  display:flex; align-items:center; gap:10px; padding:12px 14px;
+  border-bottom:1px solid var(--line-soft);
+}
+.mark {
+  flex:none; width:34px; height:34px; padding:8px;
+  border-radius:10px; background:var(--deep); color:#fff; font-size:18px;
+}
+.brand { display:flex; flex-direction:column; line-height:1.2; min-width:0; }
+.brand strong { font-size:15px; font-weight:800; letter-spacing:-.02em; }
+.brand small { color:var(--gray-500); font-size:10px; }
+.status {
+  margin-left:auto; flex:none; display:inline-flex; align-items:center; gap:5px;
+  font-size:10px; font-weight:600; border-radius:999px;
+  padding:3px 8px; background:var(--line-soft); color:var(--gray-500);
+}
+.status .icon { font-size:13px; }
+.status.ok { background:var(--green-50); color:var(--green-700); }
+.status.off { background:#fef2f2; color:#b91c1c; }
+.status.warn { background:#fffbeb; color:#92400e; }
+.status.warn .icon { color:var(--gold); }
+main { padding:12px 14px 16px; }
+.row { display:flex; gap:8px; }
+.btn, .ghost {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  border-radius:9px; padding:8px 12px; font-size:12px; font-weight:600;
+  border:1px solid var(--green-700); background:var(--green-700); color:#fff;
+}
+.btn .icon, .ghost .icon { font-size:14px; }
+.btn:hover { background:var(--green-800); }
+.ghost { border-color:var(--line); background:#fff; color:var(--gray-700); }
+.ghost:hover { background:var(--line-soft); }
+.btn:disabled { opacity:.6; cursor:default; }
+.btn.done { border-color:var(--green-700); background:var(--green-50); color:var(--green-700); }
+.btn.error { border-color:#fecaca; background:#fef2f2; color:#b91c1c; }
+.message { margin:10px 0; color:var(--gray-500); font-size:12px; }
+.list { display:grid; gap:8px; max-height:320px; overflow:auto; }
+.item { border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+.item .top { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.item .title {
+  min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:600;
+}
+.badge {
+  flex:none; font-size:10px; font-weight:600; border-radius:999px;
+  padding:2px 8px; background:var(--green-50); color:var(--green-700);
+}
+.item .meta { margin:4px 0 8px; color:var(--gray-500); font-size:11px; word-break:break-all; }
+.item .btn { width:100%; }
+.settings { margin-top:14px; border-top:1px solid var(--line-soft); padding-top:10px; }
+.settings summary {
+  display:flex; align-items:center; justify-content:space-between;
+  cursor:pointer; list-style:none; color:var(--gray-500); font-size:12px; font-weight:600;
+}
+.settings summary::-webkit-details-marker { display:none; }
+.settings summary .icon { font-size:12px; }
+.settings label { display:grid; gap:4px; margin:10px 0 8px; color:var(--gray-500); font-size:11px; }
+.settings input {
+  border:1px solid var(--line); border-radius:8px; padding:7px 9px;
+  font:12px Inter,system-ui,sans-serif; color:var(--ink); outline:none;
+}
+.settings input:focus { border-color:var(--green-700); box-shadow:0 0 0 3px rgba(26,122,74,.12); }
+.ghost.small { padding:5px 10px; font-size:11px; }
+.empty { padding:12px; border:1px dashed var(--line); border-radius:10px; color:var(--gray-500); text-align:center; }
